@@ -11,21 +11,23 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
             body: CustomScrollView(
-              slivers: [SliverGrid(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4,
-                
-              ),
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
-                  return Container(
-                    alignment: Alignment.center,
-                    color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
-                  );
-                },
-                childCount: 32,
-              ),
-                )],
-            )));
+      slivers: [
+        SliverGrid(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 4,
+          ),
+          delegate: SliverChildBuilderDelegate(
+            (BuildContext context, int index) {
+              return Container(
+                alignment: Alignment.center,
+                color:
+                    Colors.primaries[Random().nextInt(Colors.primaries.length)],
+              );
+            },
+            childCount: 32,
+          ),
+        )
+      ],
+    )));
   }
 }

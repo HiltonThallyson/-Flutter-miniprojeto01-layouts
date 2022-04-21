@@ -21,11 +21,11 @@ class _MainScreenState extends State<MainScreen> {
     } else if (_imc < 25) {
       _status = Colors.green;
     } else if (_imc < 30) {
-      _status = Colors.yellow[200];
+      _status = Colors.yellow[300];
     } else if (_imc < 35) {
-      _status = Colors.yellow[700];
+      _status = Color.fromARGB(255, 243, 163, 25);
     } else if (_imc < 40) {
-      _status = Colors.orange[700];
+      _status = Colors.orange[800];
     } else {
       _status = Colors.red[700];
     }
@@ -47,7 +47,7 @@ class _MainScreenState extends State<MainScreen> {
       appBar: AppBar(
         title: Text("IMC Calculator"),
         centerTitle: true,
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.blueGrey,
       ),
       body: Center(
           child: Column(
@@ -79,6 +79,9 @@ class _MainScreenState extends State<MainScreen> {
               _generateResult();
             },
             child: Text('Calcular IMC'),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.blueGrey,
+            ),
           )
         ],
       )),
